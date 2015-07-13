@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6751"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LJDrawViewController">
+            <connections>
+                <outlet property="drawToolView" destination="epM-ji-rMf" id="bOl-xU-CqP"/>
+                <outlet property="drawView" destination="jiM-Oa-b3p" id="jh8-3S-8kL"/>
+                <outlet property="view" destination="iN0-l3-epB" id="IZq-Rf-G5E"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJt-oO-rM8">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epM-ji-rMf" customClass="LJDrawToolView">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="94"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-Oa-b3p" customClass="LJDrawView">
+                            <rect key="frame" x="0.0" y="94" width="600" height="506"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="jiM-Oa-b3p" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="6Gs-8X-TlP"/>
+                        <constraint firstAttribute="bottom" secondItem="jiM-Oa-b3p" secondAttribute="bottom" id="Vdl-8Y-WZV"/>
+                        <constraint firstItem="jiM-Oa-b3p" firstAttribute="top" secondItem="epM-ji-rMf" secondAttribute="bottom" id="bC2-68-zfY"/>
+                        <constraint firstAttribute="trailing" secondItem="epM-ji-rMf" secondAttribute="trailing" id="mNG-X9-bmu"/>
+                        <constraint firstItem="epM-ji-rMf" firstAttribute="height" secondItem="YJt-oO-rM8" secondAttribute="height" multiplier="0.15" constant="4" id="oKW-oC-Zwm"/>
+                        <constraint firstAttribute="trailing" secondItem="jiM-Oa-b3p" secondAttribute="trailing" id="p1a-AP-4Vz"/>
+                        <constraint firstItem="epM-ji-rMf" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="wtJ-EL-lGD"/>
+                        <constraint firstItem="epM-ji-rMf" firstAttribute="top" secondItem="YJt-oO-rM8" secondAttribute="top" id="xiZ-K2-x4I"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="YJt-oO-rM8" secondAttribute="bottom" id="RyD-ei-dnb"/>
+                <constraint firstItem="YJt-oO-rM8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Z56-9d-sTN"/>
+                <constraint firstAttribute="trailing" secondItem="YJt-oO-rM8" secondAttribute="trailing" id="lSw-20-vj1"/>
+                <constraint firstItem="YJt-oO-rM8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vBm-0C-elr"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+        </view>
+    </objects>
+</document>

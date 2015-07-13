@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83A080A71B53C43500D696F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A080A61B53C43500D696F3 /* main.m */; };
+		83A080AA1B53C43500D696F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A080A91B53C43500D696F3 /* AppDelegate.m */; };
+		83A080C11B53C43500D696F3 /* LJDrawingBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A080C01B53C43500D696F3 /* LJDrawingBoardTests.m */; };
+		83A080D71B53C46200D696F3 /* LJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A080CB1B53C46200D696F3 /* LJViewController.m */; };
+		83A080D81B53C46200D696F3 /* LJDrawPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A080CD1B53C46200D696F3 /* LJDrawPath.m */; };
+		83A080D91B53C46200D696F3 /* LJDrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A080CE1B53C46200D696F3 /* LJDrawViewController.xib */; };
+		83A080DA1B53C46200D696F3 /* LJDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A080D01B53C46200D696F3 /* LJDrawView.m */; };
+		83A080DB1B53C46200D696F3 /* LJDrawToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A080D21B53C46200D696F3 /* LJDrawToolView.m */; };
+		83A080DC1B53C46200D696F3 /* LJDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A080D41B53C46200D696F3 /* LJDrawViewController.m */; };
+		83A080DD1B53C46200D696F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A080D51B53C46200D696F3 /* Main.storyboard */; };
+		83A080DE1B53C46200D696F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A080D61B53C46200D696F3 /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83A080BB1B53C43500D696F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83A080991B53C43500D696F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83A080A01B53C43500D696F3;
+			remoteInfo = LJDrawingBoard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		83A080A11B53C43500D696F3 /* LJDrawingBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LJDrawingBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83A080A51B53C43500D696F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83A080A61B53C43500D696F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		83A080A81B53C43500D696F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		83A080A91B53C43500D696F3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		83A080BA1B53C43500D696F3 /* LJDrawingBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LJDrawingBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83A080BF1B53C43500D696F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83A080C01B53C43500D696F3 /* LJDrawingBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJDrawingBoardTests.m; sourceTree = "<group>"; };
+		83A080CA1B53C46200D696F3 /* LJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJViewController.h; sourceTree = "<group>"; };
+		83A080CB1B53C46200D696F3 /* LJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJViewController.m; sourceTree = "<group>"; };
+		83A080CC1B53C46200D696F3 /* LJDrawPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJDrawPath.h; sourceTree = "<group>"; };
+		83A080CD1B53C46200D696F3 /* LJDrawPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJDrawPath.m; sourceTree = "<group>"; };
+		83A080CE1B53C46200D696F3 /* LJDrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJDrawViewController.xib; sourceTree = "<group>"; };
+		83A080CF1B53C46200D696F3 /* LJDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJDrawView.h; sourceTree = "<group>"; };
+		83A080D01B53C46200D696F3 /* LJDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJDrawView.m; sourceTree = "<group>"; };
+		83A080D11B53C46200D696F3 /* LJDrawToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJDrawToolView.h; sourceTree = "<group>"; };
+		83A080D21B53C46200D696F3 /* LJDrawToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJDrawToolView.m; sourceTree = "<group>"; };
+		83A080D31B53C46200D696F3 /* LJDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJDrawViewController.h; sourceTree = "<group>"; };
+		83A080D41B53C46200D696F3 /* LJDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJDrawViewController.m; sourceTree = "<group>"; };
+		83A080D51B53C46200D696F3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		83A080D61B53C46200D696F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83A0809E1B53C43500D696F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83A080B71B53C43500D696F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83A080981B53C43500D696F3 = {
+			isa = PBXGroup;
+			children = (
+				83A080A31B53C43500D696F3 /* LJDrawingBoard */,
+				83A080BD1B53C43500D696F3 /* LJDrawingBoardTests */,
+				83A080A21B53C43500D696F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83A080A21B53C43500D696F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83A080A11B53C43500D696F3 /* LJDrawingBoard.app */,
+				83A080BA1B53C43500D696F3 /* LJDrawingBoardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83A080A31B53C43500D696F3 /* LJDrawingBoard */ = {
+			isa = PBXGroup;
+			children = (
+				83A080A81B53C43500D696F3 /* AppDelegate.h */,
+				83A080A91B53C43500D696F3 /* AppDelegate.m */,
+				83A080CA1B53C46200D696F3 /* LJViewController.h */,
+				83A080CB1B53C46200D696F3 /* LJViewController.m */,
+				83A080E01B53C47800D696F3 /* Model */,
+				83A080E11B53C48700D696F3 /* View */,
+				83A080E21B53C49400D696F3 /* Controller */,
+				83A080D51B53C46200D696F3 /* Main.storyboard */,
+				83A080D61B53C46200D696F3 /* Images.xcassets */,
+				83A080A41B53C43500D696F3 /* Supporting Files */,
+			);
+			path = LJDrawingBoard;
+			sourceTree = "<group>";
+		};
+		83A080A41B53C43500D696F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83A080A51B53C43500D696F3 /* Info.plist */,
+				83A080A61B53C43500D696F3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83A080BD1B53C43500D696F3 /* LJDrawingBoardTests */ = {
+			isa = PBXGroup;
+			children = (
+				83A080C01B53C43500D696F3 /* LJDrawingBoardTests.m */,
+				83A080BE1B53C43500D696F3 /* Supporting Files */,
+			);
+			path = LJDrawingBoardTests;
+			sourceTree = "<group>";
+		};
+		83A080BE1B53C43500D696F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83A080BF1B53C43500D696F3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83A080E01B53C47800D696F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83A080CC1B53C46200D696F3 /* LJDrawPath.h */,
+				83A080CD1B53C46200D696F3 /* LJDrawPath.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		83A080E11B53C48700D696F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83A080CE1B53C46200D696F3 /* LJDrawViewController.xib */,
+				83A080CF1B53C46200D696F3 /* LJDrawView.h */,
+				83A080D01B53C46200D696F3 /* LJDrawView.m */,
+				83A080D11B53C46200D696F3 /* LJDrawToolView.h */,
+				83A080D21B53C46200D696F3 /* LJDrawToolView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		83A080E21B53C49400D696F3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				83A080D31B53C46200D696F3 /* LJDrawViewController.h */,
+				83A080D41B53C46200D696F3 /* LJDrawViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83A080A01B53C43500D696F3 /* LJDrawingBoard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83A080C41B53C43500D696F3 /* Build configuration list for PBXNativeTarget "LJDrawingBoard" */;
+			buildPhases = (
+				83A0809D1B53C43500D696F3 /* Sources */,
+				83A0809E1B53C43500D696F3 /* Frameworks */,
+				83A0809F1B53C43500D696F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LJDrawingBoard;
+			productName = LJDrawingBoard;
+			productReference = 83A080A11B53C43500D696F3 /* LJDrawingBoard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		83A080B91B53C43500D696F3 /* LJDrawingBoardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83A080C71B53C43500D696F3 /* Build configuration list for PBXNativeTarget "LJDrawingBoardTests" */;
+			buildPhases = (
+				83A080B61B53C43500D696F3 /* Sources */,
+				83A080B71B53C43500D696F3 /* Frameworks */,
+				83A080B81B53C43500D696F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83A080BC1B53C43500D696F3 /* PBXTargetDependency */,
+			);
+			name = LJDrawingBoardTests;
+			productName = LJDrawingBoardTests;
+			productReference = 83A080BA1B53C43500D696F3 /* LJDrawingBoardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83A080991B53C43500D696F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = rj;
+				TargetAttributes = {
+					83A080A01B53C43500D696F3 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					83A080B91B53C43500D696F3 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 83A080A01B53C43500D696F3;
+					};
+				};
+			};
+			buildConfigurationList = 83A0809C1B53C43500D696F3 /* Build configuration list for PBXProject "LJDrawingBoard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83A080981B53C43500D696F3;
+			productRefGroup = 83A080A21B53C43500D696F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83A080A01B53C43500D696F3 /* LJDrawingBoard */,
+				83A080B91B53C43500D696F3 /* LJDrawingBoardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83A0809F1B53C43500D696F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83A080DE1B53C46200D696F3 /* Images.xcassets in Resources */,
+				83A080D91B53C46200D696F3 /* LJDrawViewController.xib in Resources */,
+				83A080DD1B53C46200D696F3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83A080B81B53C43500D696F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83A0809D1B53C43500D696F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83A080DB1B53C46200D696F3 /* LJDrawToolView.m in Sources */,
+				83A080D81B53C46200D696F3 /* LJDrawPath.m in Sources */,
+				83A080DC1B53C46200D696F3 /* LJDrawViewController.m in Sources */,
+				83A080AA1B53C43500D696F3 /* AppDelegate.m in Sources */,
+				83A080A71B53C43500D696F3 /* main.m in Sources */,
+				83A080DA1B53C46200D696F3 /* LJDrawView.m in Sources */,
+				83A080D71B53C46200D696F3 /* LJViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83A080B61B53C43500D696F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83A080C11B53C43500D696F3 /* LJDrawingBoardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83A080BC1B53C43500D696F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83A080A01B53C43500D696F3 /* LJDrawingBoard */;
+			targetProxy = 83A080BB1B53C43500D696F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		83A080C21B53C43500D696F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83A080C31B53C43500D696F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83A080C51B53C43500D696F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = LJDrawingBoard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		83A080C61B53C43500D696F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = LJDrawingBoard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		83A080C81B53C43500D696F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LJDrawingBoardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LJDrawingBoard.app/LJDrawingBoard";
+			};
+			name = Debug;
+		};
+		83A080C91B53C43500D696F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LJDrawingBoardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LJDrawingBoard.app/LJDrawingBoard";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83A0809C1B53C43500D696F3 /* Build configuration list for PBXProject "LJDrawingBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83A080C21B53C43500D696F3 /* Debug */,
+				83A080C31B53C43500D696F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83A080C41B53C43500D696F3 /* Build configuration list for PBXNativeTarget "LJDrawingBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83A080C51B53C43500D696F3 /* Debug */,
+				83A080C61B53C43500D696F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		83A080C71B53C43500D696F3 /* Build configuration list for PBXNativeTarget "LJDrawingBoardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83A080C81B53C43500D696F3 /* Debug */,
+				83A080C91B53C43500D696F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83A080991B53C43500D696F3 /* Project object */;
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FVG-ao-oZV">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="QLX-zo-Y5a">
+            <objects>
+                <navigationController id="FVG-ao-oZV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PtE-wf-O6r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lYL-Js-xe7" kind="relationship" relationship="rootViewController" id="Dz9-qz-epx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j54-Xv-1wA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-755" y="196"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iIH-Nd-1jK">
+            <objects>
+                <viewController id="lYL-Js-xe7" customClass="LJViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qrL-iu-mBQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="MIJ-eh-LPV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L0q-z5-qjZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihD-un-BbE">
+                                <rect key="frame" x="10" y="72" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="5bA-wj-z1i"/>
+                                    <constraint firstAttribute="height" constant="30" id="VdQ-km-Opn"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn:" destination="lYL-Js-xe7" eventType="touchUpInside" id="olt-9T-mq4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ihD-un-BbE" firstAttribute="leading" secondItem="L0q-z5-qjZ" secondAttribute="leading" constant="10" id="Fui-0q-hhZ"/>
+                            <constraint firstItem="ihD-un-BbE" firstAttribute="top" secondItem="qrL-iu-mBQ" secondAttribute="bottom" constant="8" id="S9F-Q6-oTB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="r8B-up-9Yf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qTL-Ed-ZjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71" y="212"/>
+        </scene>
+    </scenes>
+</document>
