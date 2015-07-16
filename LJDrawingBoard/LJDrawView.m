@@ -24,6 +24,7 @@
     //获取上下文
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self drawView:context];
+
 }
 - (void)drawView:(CGContextRef)context {
     // 1. 设置上下文属性

@@ -17,8 +17,8 @@
 - (void)drawToolViewWithKeepImage;
 - (void)drawToolViewWithBack;
 @end
-@interface LJDrawToolView : UIView
-@property (nonatomic, assign) id<LJDrawToolViewDelegate> delegate;
+@interface LJDrawToolView : UIScrollView
+@property (nonatomic, assign) id<LJDrawToolViewDelegate> drawToolDelegate;
 @property (nonatomic, weak) LJButton *fristBtn;
 - (void)click:(LJButton *)sender ;
 @end

@@ -9,10 +9,11 @@
 #import "LJDrawViewController.h"
 #import "LJDrawView.h"
 #import "LJDrawToolView.h"
-
+#import "LJBgView.h"
 @interface LJDrawViewController ()
 @property (weak, nonatomic) IBOutlet LJDrawView *drawView;
 @property (weak, nonatomic) IBOutlet LJDrawToolView *drawToolView;
+@property (weak, nonatomic) IBOutlet LJBgView *bgView;
 
 @end
 
@@ -20,11 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.drawToolView setDelegate:self];
+    [self.drawToolView setDrawToolDelegate:self];
     
     [self.drawToolView click:self.drawToolView.fristBtn];
 }
-
+#pragma mark - drawToolDelegate
 - (void)drawToolViewWithDraw {
     [self.drawView draw];
 }
@@ -60,7 +61,7 @@
     return YES;
 }
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationLandscapeLeft;
+    return UIInterfaceOrientationPortrait;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

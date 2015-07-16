@@ -2,13 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6751"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LJDrawViewController">
             <connections>
-                <outlet property="drawToolView" destination="epM-ji-rMf" id="bOl-xU-CqP"/>
+                <outlet property="bgView" destination="FkF-wW-NR6" id="9Nc-MN-jDI"/>
+                <outlet property="drawToolView" destination="CIf-Wk-Epv" id="ECJ-K9-cAu"/>
                 <outlet property="drawView" destination="jiM-Oa-b3p" id="jh8-3S-8kL"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IZq-Rf-G5E"/>
             </connections>
@@ -21,24 +22,47 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJt-oO-rM8">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epM-ji-rMf" customClass="LJDrawToolView">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="94"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ley-vs-3fh">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                            <color key="backgroundColor" red="0.13725490196078433" green="0.53333333333333333" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="d7n-GR-VAA"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-Oa-b3p" customClass="LJDrawView">
-                            <rect key="frame" x="0.0" y="94" width="600" height="506"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkF-wW-NR6" customClass="LJBgView">
+                            <rect key="frame" x="0.0" y="104" width="1800" height="496"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-Oa-b3p" customClass="LJDrawView">
+                            <rect key="frame" x="0.0" y="104" width="600" height="496"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIf-Wk-Epv" customClass="LJDrawToolView">
+                            <rect key="frame" x="0.0" y="10" width="600" height="94"/>
+                            <color key="backgroundColor" red="0.85098039219999999" green="0.93725490199999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </scrollView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="jiM-Oa-b3p" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="6Gs-8X-TlP"/>
-                        <constraint firstAttribute="bottom" secondItem="jiM-Oa-b3p" secondAttribute="bottom" id="Vdl-8Y-WZV"/>
-                        <constraint firstItem="jiM-Oa-b3p" firstAttribute="top" secondItem="epM-ji-rMf" secondAttribute="bottom" id="bC2-68-zfY"/>
-                        <constraint firstAttribute="trailing" secondItem="epM-ji-rMf" secondAttribute="trailing" id="mNG-X9-bmu"/>
-                        <constraint firstItem="epM-ji-rMf" firstAttribute="height" secondItem="YJt-oO-rM8" secondAttribute="height" multiplier="0.15" constant="4" id="oKW-oC-Zwm"/>
-                        <constraint firstAttribute="trailing" secondItem="jiM-Oa-b3p" secondAttribute="trailing" id="p1a-AP-4Vz"/>
-                        <constraint firstItem="epM-ji-rMf" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="wtJ-EL-lGD"/>
-                        <constraint firstItem="epM-ji-rMf" firstAttribute="top" secondItem="YJt-oO-rM8" secondAttribute="top" id="xiZ-K2-x4I"/>
+                        <constraint firstItem="CIf-Wk-Epv" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="1gs-TY-msc"/>
+                        <constraint firstAttribute="trailing" secondItem="jiM-Oa-b3p" secondAttribute="trailing" id="2MR-Nu-1Pu"/>
+                        <constraint firstItem="jiM-Oa-b3p" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="KTV-RE-NK6"/>
+                        <constraint firstAttribute="trailing" secondItem="CIf-Wk-Epv" secondAttribute="trailing" id="Ktz-Q3-Qpx"/>
+                        <constraint firstItem="ley-vs-3fh" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="M84-4w-eUB"/>
+                        <constraint firstItem="jiM-Oa-b3p" firstAttribute="top" secondItem="CIf-Wk-Epv" secondAttribute="bottom" id="NV0-Sn-fWG"/>
+                        <constraint firstAttribute="bottom" secondItem="FkF-wW-NR6" secondAttribute="bottom" id="Noj-Y4-500"/>
+                        <constraint firstItem="FkF-wW-NR6" firstAttribute="top" secondItem="CIf-Wk-Epv" secondAttribute="bottom" id="VZn-FZ-thh"/>
+                        <constraint firstItem="CIf-Wk-Epv" firstAttribute="top" secondItem="YJt-oO-rM8" secondAttribute="top" constant="10" id="W5B-jr-QfY"/>
+                        <constraint firstItem="CIf-Wk-Epv" firstAttribute="height" secondItem="YJt-oO-rM8" secondAttribute="height" multiplier="0.156" id="XLh-pY-C75"/>
+                        <constraint firstAttribute="trailing" secondItem="ley-vs-3fh" secondAttribute="trailing" id="o7X-B1-3Ty"/>
+                        <constraint firstAttribute="bottom" secondItem="jiM-Oa-b3p" secondAttribute="bottom" id="rUZ-gv-h6M"/>
+                        <constraint firstItem="FkF-wW-NR6" firstAttribute="width" secondItem="YJt-oO-rM8" secondAttribute="width" multiplier="3" id="tYe-fR-CwU"/>
+                        <constraint firstItem="FkF-wW-NR6" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="ti3-ld-lm3"/>
+                        <constraint firstItem="ley-vs-3fh" firstAttribute="top" secondItem="YJt-oO-rM8" secondAttribute="top" id="wfN-Bb-CoN"/>
                     </constraints>
                 </view>
             </subviews>
@@ -51,6 +75,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <point key="canvasLocation" x="60" y="157"/>
         </view>
     </objects>
 </document>
