@@ -142,7 +142,7 @@
 				83A080CC1B53C46200D696F3 /* LJDrawPath.h */,
 				83A080CD1B53C46200D696F3 /* LJDrawPath.m */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		83A080E11B53C48700D696F3 /* View */ = {
@@ -156,7 +156,7 @@
 				83A080D11B53C46200D696F3 /* LJDrawToolView.h */,
 				83A080D21B53C46200D696F3 /* LJDrawToolView.m */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		83A080E21B53C49400D696F3 /* Controller */ = {
@@ -165,7 +165,7 @@
 				83A080D31B53C46200D696F3 /* LJDrawViewController.h */,
 				83A080D41B53C46200D696F3 /* LJDrawViewController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

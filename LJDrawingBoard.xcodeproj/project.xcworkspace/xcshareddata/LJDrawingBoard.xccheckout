@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4AFB1530-48C4-44A3-ABE9-E5D2031D25F4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LJDrawingBoard</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9861C3F8F80B4BC65CA889BC1E0FE0DD71262A51</key>
+		<string>https://github.com/LJjack/LJDrawingBoard.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LJDrawingBoard.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9861C3F8F80B4BC65CA889BC1E0FE0DD71262A51</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/LJjack/LJDrawingBoard.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9861C3F8F80B4BC65CA889BC1E0FE0DD71262A51</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9861C3F8F80B4BC65CA889BC1E0FE0DD71262A51</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LJDrawingBoard</string>
+		</dict>
+	</array>
+</dict>
+</plist>
