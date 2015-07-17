@@ -17,6 +17,7 @@
 #import "LJViewController.h"
 #import "LJDrawViewController.h"
 @interface LJViewController ()<LJDrawViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -27,12 +28,7 @@
    
 }
 - (void)drawViewControllerBackImage:(UIImage *)image {
-    CGSize imageSize = [image size];
-    UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, imageSize.width*0.5, imageSize.height*0.5)];
-    [iv setImage:image];
-    [iv setCenter:self.view.center];
-
-    [self.view addSubview:iv];
+    self.imageView.image = image;
 }
 - (IBAction)btn:(UIButton *)sender {
     LJDrawViewController *drawVC = [[LJDrawViewController alloc] init];

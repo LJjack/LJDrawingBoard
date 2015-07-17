@@ -16,6 +16,8 @@
 - (void)drawToolViewWithClearScreen;
 - (void)drawToolViewWithKeepImage;
 - (void)drawToolViewWithBack;
+- (void)drawToolViewWithNext;
+- (void)drawToolViewWithPrevious;
 @end
 @interface LJDrawToolView : UIScrollView
 @property (nonatomic, assign) id<LJDrawToolViewDelegate> drawToolDelegate;

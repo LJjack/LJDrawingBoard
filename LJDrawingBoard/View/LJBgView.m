@@ -17,7 +17,7 @@
         UILabel *page = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 21)];
         [page setCenter:CGPointMake(screenWidth*0.5 + screenWidth*i , CGRectGetMaxY(self.frame)-20)];
         [page setTextAlignment:NSTextAlignmentCenter];
-        [page setText:@"1/3页"];
+        [page setText:[NSString stringWithFormat:@"%li/3页",i+1]];
         [self addSubview:page];
     }
     

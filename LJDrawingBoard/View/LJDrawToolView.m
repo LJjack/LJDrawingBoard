@@ -15,16 +15,15 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.layer.cornerRadius = 3.0f;
-        [self setBackgroundColor:
-         [UIColor colorWithRed:44/255.0 green:114/255.0 blue:195/255.0 alpha:1.0]];
-
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+        [self setBackgroundImage:[UIImage imageNamed:@"draw_btn_n"] forState:UIControlStateNormal];
+
+        [self setBackgroundImage:[UIImage imageNamed:@"draw_btn_h"] forState:UIControlStateHighlighted];
         [self.titleLabel setFont:[UIFont fontWithDescriptor:[UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleSubheadline] size:17.0f]];
+        [self setClipsToBounds:YES];
     }
     return self;
 }
-
 @end
 @interface LJDrawToolView ()
 {
@@ -35,14 +34,14 @@
 @end
 @implementation LJDrawToolView
 - (void)awakeFromNib {
-    _names = @[@"写字",@"撤销",@"橡皮擦",@"清屏",@"保存",@"返回",@"上一页",@"下一页"];
+    _names = @[@"清空",@"上次痕迹",@"撤销",@"恢复",@"橡皮擦",@"上一页",@"下一页",@"保存",@"返回"];
     //添加所有按钮
     [self addAllBtn];
 }
 #pragma mark 添加所有按钮
 - (void)addAllBtn {
-    CGFloat width = (self.bounds.size.height - _names.count-1)/(_names.count*0.1);
-    CGFloat height = self.bounds.size.height;
+    CGFloat width = 80;
+    CGFloat height = self.bounds.size.height-20;
    
     NSInteger namesCount = [_names count]+1;
     for (NSInteger i = 1; i < namesCount; i ++) {
@@ -51,7 +50,7 @@
         LJButton * button = [LJButton buttonWithType:UIButtonTypeCustom];
         [button setFrame:CGRectMake(0, 0, width, height)];
         
-        [button setCenter:CGPointMake(x, CGRectGetMidY(self.frame))];
+        [button setCenter:CGPointMake(x, self.frame.size.height*0.5)];
         [button setTag:i];
         [button setTitle:_names[i-1] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
@@ -67,59 +66,63 @@
 }
 - (void)click:(LJButton *)sender {
 
-    [_selectedbutton setSelected:NO];
-    
+//    [_selectedbutton setSelected:NO];
+    //1.清空 2.上次痕迹 3.撤销 4.恢复 5.橡皮擦 6.上一页 7.下一页 8.保存 9.返回
     switch (sender.tag) {
         case 1:
-            if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithDraw)]) {
-                [_drawToolDelegate drawToolViewWithDraw];
-           }
-            break;
-        case 2:
-            if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithUndo)]) {
-                [_drawToolDelegate drawToolViewWithUndo];
-            }
-            break;
-        case 3:
-            if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithEraser)]) {
-                [_drawToolDelegate drawToolViewWithEraser];
-            }
-            break;
-        case 4:
             if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithClearScreen)]) {
                 [_drawToolDelegate drawToolViewWithClearScreen];
             }
             break;
+        case 2:
+            break;
+        case 3:
+            if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithUndo)]) {
+                [_drawToolDelegate drawToolViewWithUndo];
+            }
+            break;
+        case 4:
+            break;
         case 5:
-        {
+            if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithEraser)]) {
+                [_drawToolDelegate drawToolViewWithEraser];
+            }
+            
+            break;
+        case 6:
+            if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithPrevious)]) {
+                
+                [_drawToolDelegate drawToolViewWithPrevious];
+            }
+            break;
+        case 7:
+            if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithNext)]) {
+                
+                [_drawToolDelegate drawToolViewWithNext];
+            }
+            break;
+        case 8:
             if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithKeepImage)]) {
                 
                 [_drawToolDelegate drawToolViewWithKeepImage];
             }
-        }
-        case 6:
-        {
+            break;
+        case 9:
             if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithBack)]) {
                 
                 [_drawToolDelegate drawToolViewWithBack];
             }
-        }
-        case 7:
-        {
-            
-        }
-        case 8:
-        {
-           
-        }
             break;
         default:
             break;
     }
-    if (_selectedbutton != sender) {
-        [_selectedbutton.layer setBorderColor:[UIColor lightGrayColor].CGColor];
-    }
-    [sender setSelected:YES];
-    _selectedbutton = sender;
+//    if (_selectedbutton == sender) {
+//        [_selectedbutton setSelected:NO];
+//        _selectedbutton = nil;
+//    }else {
+//        
+//        [sender setSelected:YES];
+//        _selectedbutton = sender;
+//    }
 }
 @end

@@ -19,6 +19,8 @@
 		83A080DD1B53C46200D696F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A080D51B53C46200D696F3 /* Main.storyboard */; };
 		83A080DE1B53C46200D696F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A080D61B53C46200D696F3 /* Images.xcassets */; };
 		83C582E71B57AED000120A4A /* LJBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C582E61B57AED000120A4A /* LJBgView.m */; };
+		83C582F61B58AD1200120A4A /* draw_btn_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C582F41B58AD1200120A4A /* draw_btn_h.png */; };
+		83C582F71B58AD1200120A4A /* draw_btn_n.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C582F51B58AD1200120A4A /* draw_btn_n.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		83A080D61B53C46200D696F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		83C582E51B57AED000120A4A /* LJBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJBgView.h; sourceTree = "<group>"; };
 		83C582E61B57AED000120A4A /* LJBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJBgView.m; sourceTree = "<group>"; };
+		83C582F41B58AD1200120A4A /* draw_btn_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = draw_btn_h.png; sourceTree = "<group>"; };
+		83C582F51B58AD1200120A4A /* draw_btn_n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = draw_btn_n.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 				83C582E61B57AED000120A4A /* LJBgView.m */,
 				83A080D11B53C46200D696F3 /* LJDrawToolView.h */,
 				83A080D21B53C46200D696F3 /* LJDrawToolView.m */,
+				83C582F41B58AD1200120A4A /* draw_btn_h.png */,
+				83C582F51B58AD1200120A4A /* draw_btn_n.png */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				83A080DE1B53C46200D696F3 /* Images.xcassets in Resources */,
+				83C582F61B58AD1200120A4A /* draw_btn_h.png in Resources */,
+				83C582F71B58AD1200120A4A /* draw_btn_n.png in Resources */,
 				83A080D91B53C46200D696F3 /* LJDrawViewController.xib in Resources */,
 				83A080DD1B53C46200D696F3 /* Main.storyboard in Resources */,
 			);
