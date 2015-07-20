@@ -10,7 +10,6 @@
             <connections>
                 <outlet property="bgView" destination="FkF-wW-NR6" id="9Nc-MN-jDI"/>
                 <outlet property="drawToolView" destination="CIf-Wk-Epv" id="ECJ-K9-cAu"/>
-                <outlet property="drawView" destination="jiM-Oa-b3p" id="jh8-3S-8kL"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IZq-Rf-G5E"/>
             </connections>
         </placeholder>
@@ -36,11 +35,34 @@
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkF-wW-NR6" customClass="LJBgView">
                             <rect key="frame" x="0.0" y="74" width="1800" height="526"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-Oa-b3p" customClass="LJPage1DrawView">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="526"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgY-Aa-Bui" customClass="LJPage2DrawView">
+                                    <rect key="frame" x="600" y="0.0" width="600" height="526"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rw5-1K-Xbx" customClass="LJPage3DrawView">
+                                    <rect key="frame" x="1200" y="0.0" width="600" height="526"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-Oa-b3p" customClass="LJDrawView">
-                            <rect key="frame" x="0.0" y="74" width="600" height="526"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="jiM-Oa-b3p" firstAttribute="width" secondItem="Rw5-1K-Xbx" secondAttribute="width" id="Aib-Md-c4e"/>
+                                <constraint firstAttribute="bottom" secondItem="jiM-Oa-b3p" secondAttribute="bottom" id="Gwf-9E-46g"/>
+                                <constraint firstItem="jiM-Oa-b3p" firstAttribute="width" secondItem="mgY-Aa-Bui" secondAttribute="width" id="L10-AM-ydt"/>
+                                <constraint firstItem="mgY-Aa-Bui" firstAttribute="top" secondItem="FkF-wW-NR6" secondAttribute="top" id="L5M-0O-faf"/>
+                                <constraint firstItem="jiM-Oa-b3p" firstAttribute="top" secondItem="FkF-wW-NR6" secondAttribute="top" id="TJo-7h-Xua"/>
+                                <constraint firstAttribute="bottom" secondItem="mgY-Aa-Bui" secondAttribute="bottom" id="TVV-IK-eln"/>
+                                <constraint firstItem="mgY-Aa-Bui" firstAttribute="leading" secondItem="jiM-Oa-b3p" secondAttribute="trailing" id="ZBC-I2-TA5"/>
+                                <constraint firstAttribute="bottom" secondItem="Rw5-1K-Xbx" secondAttribute="bottom" id="aL4-eS-c5G"/>
+                                <constraint firstItem="jiM-Oa-b3p" firstAttribute="leading" secondItem="FkF-wW-NR6" secondAttribute="leading" id="adc-UV-ue6"/>
+                                <constraint firstItem="Rw5-1K-Xbx" firstAttribute="top" secondItem="FkF-wW-NR6" secondAttribute="top" id="kU7-0U-ch8"/>
+                                <constraint firstItem="Rw5-1K-Xbx" firstAttribute="leading" secondItem="mgY-Aa-Bui" secondAttribute="trailing" id="siq-tY-csh"/>
+                            </constraints>
                         </view>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIf-Wk-Epv" customClass="LJDrawToolView">
                             <rect key="frame" x="0.0" y="10" width="600" height="64"/>
@@ -52,18 +74,15 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="FkF-wW-NR6" firstAttribute="top" secondItem="CIf-Wk-Epv" secondAttribute="bottom" id="0RW-wU-dkh"/>
-                        <constraint firstAttribute="trailing" secondItem="jiM-Oa-b3p" secondAttribute="trailing" id="2MR-Nu-1Pu"/>
                         <constraint firstItem="CIf-Wk-Epv" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="JmG-th-Noc"/>
-                        <constraint firstItem="jiM-Oa-b3p" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="KTV-RE-NK6"/>
                         <constraint firstItem="ley-vs-3fh" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="M84-4w-eUB"/>
                         <constraint firstAttribute="bottom" secondItem="FkF-wW-NR6" secondAttribute="bottom" id="Noj-Y4-500"/>
                         <constraint firstItem="CIf-Wk-Epv" firstAttribute="top" secondItem="YJt-oO-rM8" secondAttribute="top" constant="10" id="Xkj-f2-yBy"/>
                         <constraint firstAttribute="trailing" secondItem="CIf-Wk-Epv" secondAttribute="trailing" id="eUV-47-3wJ"/>
                         <constraint firstAttribute="trailing" secondItem="ley-vs-3fh" secondAttribute="trailing" id="o7X-B1-3Ty"/>
-                        <constraint firstAttribute="bottom" secondItem="jiM-Oa-b3p" secondAttribute="bottom" id="rUZ-gv-h6M"/>
+                        <constraint firstAttribute="width" secondItem="jiM-Oa-b3p" secondAttribute="width" id="qYn-j6-jh3"/>
                         <constraint firstItem="FkF-wW-NR6" firstAttribute="width" secondItem="YJt-oO-rM8" secondAttribute="width" multiplier="3" id="tYe-fR-CwU"/>
                         <constraint firstItem="FkF-wW-NR6" firstAttribute="leading" secondItem="YJt-oO-rM8" secondAttribute="leading" id="ti3-ld-lm3"/>
-                        <constraint firstItem="jiM-Oa-b3p" firstAttribute="top" secondItem="CIf-Wk-Epv" secondAttribute="bottom" id="tvE-aT-ElF"/>
                         <constraint firstItem="ley-vs-3fh" firstAttribute="top" secondItem="YJt-oO-rM8" secondAttribute="top" id="wfN-Bb-CoN"/>
                     </constraints>
                 </view>

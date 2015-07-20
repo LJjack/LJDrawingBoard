@@ -22,8 +22,6 @@
 - (void)awakeFromNib {
     self.color = [UIColor blackColor];
     self.lineWidth = 2.0;
-    [self setUserInteractionEnabled:YES];
-    self.drawPages = [NSMutableDictionary dictionary];
 //    self.page = 1;
 //    [self setNeedsDisplay];
 
@@ -42,8 +40,7 @@
     CGContextSetLineCap(context, kCGLineCapRound);
     
     // 2.添加上次路径
-    NSString *pageStr = [NSString stringWithFormat:@"%li",(long)self.page];
-    for (LJDrawPath *path in self.drawPages[pageStr]) {
+    for (LJDrawPath *path in self.drawPathArray) {
         
         CGContextAddPath(context, path.drawPath.CGPath);
         CGContextSetLineWidth(context, path.lineWidth);
@@ -78,14 +75,15 @@
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     // 一笔画完之后，将完整的路径添加到路径数组之中
-
+    //懒加载
+    if (self.drawPathArray == nil) {
+        self.drawPathArray = [NSMutableArray array];
+    }
     // 要将CGPathRef添加到NSMutableArray之中，需要借助贝塞尔曲线对象
     // 贝塞尔曲线是UIKit对CGPathRef的一个封装，贝塞尔路径的对象可以直接添加到数组
 //    UIBezierPath *path = [UIBezierPath bezierPathWithCGPath:self.drawPath];
     LJDrawPath *path = [LJDrawPath drawPathWithCGPath:self.drawPath color:self.color lineWidth:self.lineWidth];
     [self.drawPathArray addObject:path];
-    NSLog(@"=-touchesEnded-==%li",(long)_page);
-    [self.drawPages setValue:self.drawPathArray forKey:[NSString stringWithFormat:@"%li",(long)self.page]];
     self.pathReleased = YES;
     CGPathRelease(self.drawPath);
 }
@@ -94,9 +92,9 @@
 }
 #pragma mark -工具
 - (void)draw {
-//    self.color = [UIColor blackColor];
-//    self.lineWidth = 2.0;
-//    [self setUserInteractionEnabled:YES];
+    self.color = [UIColor blackColor];
+    self.lineWidth = 2.0;
+    [self setUserInteractionEnabled:YES];
 }
 
 #pragma mark 撤销
@@ -118,11 +116,5 @@
     [self setNeedsDisplay];
     [self setUserInteractionEnabled:NO];
 }
-#pragma mark 在第page页绘画
-- (void)drawOnPage:(NSInteger)page {
-    _page = page;
-    self.drawPathArray = [NSMutableArray array];
-    [self setNeedsDisplay];
-    
-}
+
 @end

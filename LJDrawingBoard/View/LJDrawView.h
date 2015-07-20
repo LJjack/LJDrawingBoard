@@ -9,10 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LJDrawView : UIView
-// 每一页的绘图
-@property (strong,nonatomic) NSMutableDictionary *drawPages;
-;
-@property (assign,nonatomic) NSInteger page;
+
 /*画图*/
 - (void)draw;
 /*撤销*/
@@ -21,6 +18,5 @@
 - (void)eraser;
 /*清屏*/
 - (void)clearScreen;
-/*在第page页绘画*/
-- (void)drawOnPage:(NSInteger )page;
+
 @end

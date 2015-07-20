@@ -14,23 +14,26 @@
 {
     NSInteger _pageNum;
     UIAlertView *_alert;
+    
 }
 @property (weak, nonatomic) IBOutlet LJDrawView *drawView;
 @property (weak, nonatomic) IBOutlet LJDrawToolView *drawToolView;
 @property (weak, nonatomic) IBOutlet LJBgView *bgView;
-
+@property (strong, nonatomic) NSMutableDictionary *imageDict;
 @end
 
 @implementation LJDrawViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.drawView drawOnPage:1];
+    self.imageDict = [NSMutableDictionary dictionary];
+
     [self.drawToolView setDrawToolDelegate:self];
     
     [self.drawToolView click:self.drawToolView.fristBtn];
     _pageNum = 1;
 }
+
 #pragma mark - drawToolDelegate
 - (void)drawToolViewWithDraw {
     [self.drawView draw];
@@ -71,7 +74,7 @@
             frame.origin.x += [UIScreen mainScreen].bounds.size.width;
             weakSelf.bgView.frame = frame;
         }];
-        [self.drawView drawOnPage:_pageNum];
+
         
     }else {
         _pageNum = 1;
@@ -85,14 +88,16 @@
 - (void)drawToolViewWithNext {
     _pageNum ++;
     if (_pageNum<=3) {
-        
         __weak typeof(self) weakSelf = self;
         [UIView animateWithDuration:0.2 animations:^{
             CGRect frame = weakSelf.bgView.frame;
             frame.origin.x -= [UIScreen mainScreen].bounds.size.width;
             weakSelf.bgView.frame = frame;
         }];
-        [self.drawView drawOnPage:_pageNum];
+
+       
+        
+        
     }else {
         _pageNum = 3;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"页数" message:@"已经是最后一页" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];

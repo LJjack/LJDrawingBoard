@@ -27,8 +27,8 @@
     [super viewDidLoad];
    
 }
-- (void)drawViewControllerBackImage:(UIImage *)image {
-    self.imageView.image = image;
+- (void)drawViewControllerBackImage1:(UIImage *)image1 andImage2:(UIImage *)image2 andImage3:(UIImage *)image3 {
+    self.imageView.image = image1;
 }
 - (IBAction)btn:(UIButton *)sender {
     LJDrawViewController *drawVC = [[LJDrawViewController alloc] init];
