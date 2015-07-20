@@ -17,8 +17,9 @@
 #import "LJViewController.h"
 #import "LJDrawViewController.h"
 @interface LJViewController ()<LJDrawViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
+@property (weak, nonatomic) IBOutlet UIImageView *imageView1;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView2;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView3;
 @end
 
 @implementation LJViewController
@@ -28,7 +29,9 @@
    
 }
 - (void)drawViewControllerBackImage1:(UIImage *)image1 andImage2:(UIImage *)image2 andImage3:(UIImage *)image3 {
-    self.imageView.image = image1;
+    self.imageView1.image = image1;
+    self.imageView2.image = image2;
+    self.imageView3.image = image3;
 }
 - (IBAction)btn:(UIButton *)sender {
     LJDrawViewController *drawVC = [[LJDrawViewController alloc] init];

@@ -10,6 +10,9 @@
             <connections>
                 <outlet property="bgView" destination="FkF-wW-NR6" id="9Nc-MN-jDI"/>
                 <outlet property="drawToolView" destination="CIf-Wk-Epv" id="ECJ-K9-cAu"/>
+                <outlet property="page1DrawView" destination="jiM-Oa-b3p" id="NIG-5c-ufG"/>
+                <outlet property="page2DrawView" destination="mgY-Aa-Bui" id="gok-6b-zWc"/>
+                <outlet property="page3DrawView" destination="Rw5-1K-Xbx" id="kCR-2r-Hvq"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IZq-Rf-G5E"/>
             </connections>
         </placeholder>
@@ -36,15 +39,15 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkF-wW-NR6" customClass="LJBgView">
                             <rect key="frame" x="0.0" y="74" width="1800" height="526"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-Oa-b3p" customClass="LJPage1DrawView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-Oa-b3p" customClass="LJDrawView">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="526"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgY-Aa-Bui" customClass="LJPage2DrawView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgY-Aa-Bui" customClass="LJDrawView">
                                     <rect key="frame" x="600" y="0.0" width="600" height="526"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rw5-1K-Xbx" customClass="LJPage3DrawView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rw5-1K-Xbx" customClass="LJDrawView">
                                     <rect key="frame" x="1200" y="0.0" width="600" height="526"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -64,7 +67,7 @@
                                 <constraint firstItem="Rw5-1K-Xbx" firstAttribute="leading" secondItem="mgY-Aa-Bui" secondAttribute="trailing" id="siq-tY-csh"/>
                             </constraints>
                         </view>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIf-Wk-Epv" customClass="LJDrawToolView">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIf-Wk-Epv" customClass="LJDrawToolView">
                             <rect key="frame" x="0.0" y="10" width="600" height="64"/>
                             <color key="backgroundColor" red="0.85098039219999999" green="0.93725490199999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>

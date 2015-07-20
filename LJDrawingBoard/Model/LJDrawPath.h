@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LJDrawPath : NSObject
+@interface LJDrawPath : NSObject<NSCoding>
 + (id)drawPathWithCGPath:(CGPathRef)drawPath
                    color:(UIColor *)color
                lineWidth:(CGFloat)lineWidth;

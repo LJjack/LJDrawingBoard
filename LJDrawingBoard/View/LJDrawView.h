@@ -9,14 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface LJDrawView : UIView
-
-/*画图*/
-- (void)draw;
+// 绘图路径数组
+@property (strong, nonatomic) NSMutableArray *drawPathArray;
 /*撤销*/
 - (void)undo;
 /*橡皮擦*/
-- (void)eraser;
+- (void)eraser:(BOOL)isEraser;
 /*清屏*/
 - (void)clearScreen;
-
+/*恢复*/
+- (void)recovery;
+/*上次痕迹*/
+- (void)lastTrace:(NSArray *)drawPathArray;
 @end

@@ -5,7 +5,6 @@
 //  Created by liujunjie on 15-7-10.
 //  Copyright (c) 2015年 rj. All rights reserved.
 //
-
 #import "LJDrawToolView.h"
 @interface LJButton : UIButton
 
@@ -27,7 +26,6 @@
 @end
 @interface LJDrawToolView ()
 {
-    LJButton *_selectedbutton;
     NSArray *_names;
 }
 @property (nonatomic, weak) LJButton *lastBtn;
@@ -66,7 +64,6 @@
 }
 - (void)click:(LJButton *)sender {
 
-//    [_selectedbutton setSelected:NO];
     //1.清空 2.上次痕迹 3.撤销 4.恢复 5.橡皮擦 6.上一页 7.下一页 8.保存 9.返回
     switch (sender.tag) {
         case 1:
@@ -75,6 +72,9 @@
             }
             break;
         case 2:
+            if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithLastTrace)]) {
+                [_drawToolDelegate drawToolViewWithLastTrace];
+            }
             break;
         case 3:
             if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithUndo)]) {
@@ -82,10 +82,17 @@
             }
             break;
         case 4:
+            if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithRecovery)]) {
+                [_drawToolDelegate drawToolViewWithRecovery];
+            }
             break;
-        case 5:
-            if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithEraser)]) {
-                [_drawToolDelegate drawToolViewWithEraser];
+        case 5://橡皮擦
+            [sender setBackgroundImage:[UIImage imageNamed:@"draw_btn_h"] forState:UIControlStateSelected];
+            [sender setSelected:!sender.selected];
+
+            
+            if ([_drawToolDelegate respondsToSelector:@selector(drawToolViewWithEraser:)]) {
+                [_drawToolDelegate drawToolViewWithEraser:sender.selected];
             }
             
             break;
@@ -116,13 +123,6 @@
         default:
             break;
     }
-//    if (_selectedbutton == sender) {
-//        [_selectedbutton setSelected:NO];
-//        _selectedbutton = nil;
-//    }else {
-//        
-//        [sender setSelected:YES];
-//        _selectedbutton = sender;
-//    }
+
 }
 @end

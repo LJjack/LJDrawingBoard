@@ -18,4 +18,17 @@
     path.lineWidth = lineWidth;
     return path;
 }
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:_drawPath forKey:@"_drawPath"];
+    [aCoder encodeObject:_drawColor forKey:@"_drawColor"];
+    [aCoder encodeObject:@(_lineWidth) forKey:@"_lineWidth"];
+}
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.drawPath = [aDecoder decodeObjectForKey:@"_drawPath"];
+        self.drawColor = [aDecoder decodeObjectForKey:@"_drawColor"];
+        self.lineWidth = [[aDecoder decodeObjectForKey:@"_lineWidth"] doubleValue];
+    }
+    return self;
+}
 @end
