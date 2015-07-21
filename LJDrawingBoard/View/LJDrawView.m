@@ -154,6 +154,9 @@
 #pragma mark 上次痕迹
 - (void)lastTrace:(NSArray *)drawPathArray {
     self.drawPathArray = (NSMutableArray *)drawPathArray;
+    if (self.recoveryDrawPathArray == nil) {
+        self.recoveryDrawPathArray = [NSMutableArray array];
+    }
     [self setNeedsDisplay];
 }
 @end
