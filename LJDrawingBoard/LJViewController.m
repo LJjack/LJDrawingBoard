@@ -43,8 +43,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)viewWillAppear:(BOOL)animated {
-    self.navigationController.navigationBarHidden = YES;
-}
 
 @end

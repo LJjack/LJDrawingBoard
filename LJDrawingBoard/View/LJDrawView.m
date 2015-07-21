@@ -9,8 +9,10 @@
 #import "LJDrawView.h"
 #import "LJDrawPath.h"
 @interface LJDrawView ()
-// 当前的绘图路径
-@property (assign, nonatomic) CGMutablePathRef drawPath;
+{
+    // 当前的绘图路径
+    CGMutablePathRef _drawPath;
+}
 
 // 恢复绘图路径数组
 @property (strong, nonatomic) NSMutableArray *recoveryDrawPathArray;
@@ -52,7 +54,7 @@
     }
     if (!self.pathReleased) {
         // 3. 添加路径
-        CGContextAddPath(context, self.drawPath);
+        CGContextAddPath(context, _drawPath);
         CGContextSetLineWidth(context, self.lineWidth);
         [self.color set];
         // 4. 绘制路径
@@ -74,10 +76,10 @@
             }
         }
     }else {
-        self.drawPath = CGPathCreateMutable();
+        _drawPath = CGPathCreateMutable();
         self.pathReleased = NO;
         // 在路径中记录触摸的初始点
-        CGPathMoveToPoint(self.drawPath, NULL, point.x, point.y);
+        CGPathMoveToPoint(_drawPath, NULL, point.x, point.y);
     }
     
 }
@@ -94,14 +96,12 @@
             }
         }
     }else {
-        CGPathAddLineToPoint(self.drawPath, NULL, point.x, point.y);
+        CGPathAddLineToPoint(_drawPath, NULL, point.x, point.y);
         [self setNeedsDisplay];
     }
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (_isEraser) {
-        
-    }else {
+    if (!_isEraser) {
         // 一笔画完之后，将完整的路径添加到路径数组之中
         //懒加载
         if (self.drawPathArray == nil) {
@@ -111,10 +111,10 @@
         // 要将CGPathRef添加到NSMutableArray之中，需要借助贝塞尔曲线对象
         // 贝塞尔曲线是UIKit对CGPathRef的一个封装，贝塞尔路径的对象可以直接添加到数组
         //    UIBezierPath *path = [UIBezierPath bezierPathWithCGPath:self.drawPath];
-        LJDrawPath *path = [LJDrawPath drawPathWithCGPath:self.drawPath color:self.color lineWidth:self.lineWidth];
+        LJDrawPath *path = [LJDrawPath drawPathWithCGPath:_drawPath  color:self.color lineWidth:self.lineWidth];
         [self.drawPathArray addObject:path];
         self.pathReleased = YES;
-        CGPathRelease(self.drawPath);
+        CGPathRelease(_drawPath);
     }
 }
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {

@@ -128,30 +128,20 @@
     //1.
     if (self.page1DrawView.drawPathArray) {
         [LJKeepDrawPath storageDrawPath:self.page1DrawView.drawPathArray onPage:1];
-        UIGraphicsBeginImageContext(self.page1DrawView.bounds.size);
-        [self.page1DrawView.layer renderInContext:UIGraphicsGetCurrentContext()];
-        image1 = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+        image1 = [self screenShotWithView:self.page1DrawView];
     }
     //2.
     if (self.page2DrawView.drawPathArray) {
         [LJKeepDrawPath storageDrawPath:self.page2DrawView.drawPathArray onPage:2];
-        UIGraphicsBeginImageContext(self.page2DrawView.bounds.size);
-        [self.page2DrawView.layer renderInContext:UIGraphicsGetCurrentContext()];
-        image2 = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+        image2 = [self screenShotWithView:self.page2DrawView];
     }
     //3.
     if (self.page3DrawView.drawPathArray) {
         [LJKeepDrawPath storageDrawPath:self.page3DrawView.drawPathArray onPage:3];
-        UIGraphicsBeginImageContext(self.page3DrawView.bounds.size);
-        [self.page3DrawView.layer renderInContext:UIGraphicsGetCurrentContext()];
-        image3 = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+        image3 = [self screenShotWithView:self.page3DrawView];
     }
     if ([_delegate respondsToSelector:
          @selector(drawViewControllerBackImage1:andImage2:andImage3:)]) {
-        
         [_delegate drawViewControllerBackImage1:image1 andImage2:image2 andImage3:image3];
         [self drawToolViewWithBack];
     }
@@ -196,6 +186,15 @@
         [alert dismissWithClickedButtonIndex:alert.cancelButtonIndex animated:YES];
         
     }
+}
+#pragma mark - 工具
+#pragma mark 截屏
+- (UIImage *) screenShotWithView:(LJDrawView *)drawView {
+    UIGraphicsBeginImageContext(drawView.bounds.size);
+    [drawView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage  *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 #pragma mark -
 - (BOOL)prefersStatusBarHidden

@@ -15,9 +15,9 @@
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     for (NSInteger i = 0; i < 3; i ++) {
         UILabel *page = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 21)];
-        [page setCenter:CGPointMake(screenWidth*0.5 + screenWidth*i , CGRectGetMaxY(self.frame)-20)];
+        [page setCenter:CGPointMake(screenWidth*0.5 + screenWidth*i , CGRectGetMaxY(self.frame)+50)];
         [page setTextAlignment:NSTextAlignmentCenter];
-        [page setText:[NSString stringWithFormat:@"%d/3页",i+1]];
+        [page setText:[NSString stringWithFormat:@"%ld/3页",(long)i+1]];
         [self addSubview:page];
     }
     
