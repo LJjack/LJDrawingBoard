@@ -124,25 +124,9 @@
 
 
 - (void)drawToolViewWithKeepImage {
-    UIImage *image1 =nil,*image2 = nil,*image3 = nil;
-    //1.
-    if (self.page1DrawView.drawPathArray) {
-        [LJKeepDrawPath storageDrawPath:self.page1DrawView.drawPathArray onPage:1];
-        image1 = [self screenShotWithView:self.page1DrawView];
-    }
-    //2.
-    if (self.page2DrawView.drawPathArray) {
-        [LJKeepDrawPath storageDrawPath:self.page2DrawView.drawPathArray onPage:2];
-        image2 = [self screenShotWithView:self.page2DrawView];
-    }
-    //3.
-    if (self.page3DrawView.drawPathArray) {
-        [LJKeepDrawPath storageDrawPath:self.page3DrawView.drawPathArray onPage:3];
-        image3 = [self screenShotWithView:self.page3DrawView];
-    }
     if ([_delegate respondsToSelector:
-         @selector(drawViewControllerBackImage1:andImage2:andImage3:)]) {
-        [_delegate drawViewControllerBackImage1:image1 andImage2:image2 andImage3:image3];
+         @selector(drawViewControllerBackImage:)]) {
+        [_delegate drawViewControllerBackImage:[self mergedImage]];
         [self drawToolViewWithBack];
     }
     
@@ -190,9 +174,56 @@
 #pragma mark - 工具
 #pragma mark 截屏
 - (UIImage *) screenShotWithView:(LJDrawView *)drawView {
+    
     UIGraphicsBeginImageContext(drawView.bounds.size);
-    [drawView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage  *image = UIGraphicsGetImageFromCurrentImageContext();
+    [drawView.layer renderInContext: UIGraphicsGetCurrentContext()];
+    UIImage  *bigImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return [self image:bigImage andFrame:[drawView drawImageFrame]];
+    
+}
+#pragma mark 截取指定的区域
+- (UIImage *)image:(UIImage *)image andFrame:(CGRect)frame {
+    //定义myImageRect，截图的区域
+    
+    
+    CGImageRef imageRef = image.CGImage;
+    CGImageRef subImageRef = CGImageCreateWithImageInRect(imageRef, frame);
+    UIGraphicsBeginImageContext(frame.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextDrawImage(context, frame, subImageRef);
+    UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
+    UIGraphicsEndImageContext();
+    CGImageRelease(subImageRef);
+    return smallImage;
+}
+
+#pragma mark 合并图片
+- (UIImage *)mergedImage {
+    UIImage *image1 =nil,*image2 = nil,*image3 = nil;
+    //1.
+    if (self.page1DrawView.drawPathArray) {
+        [LJKeepDrawPath storageDrawPath:self.page1DrawView.drawPathArray onPage:1];
+        image1 = [self screenShotWithView:self.page1DrawView];
+    }
+    //2.
+    if (self.page2DrawView.drawPathArray) {
+        [LJKeepDrawPath storageDrawPath:self.page2DrawView.drawPathArray onPage:2];
+        image2 = [self screenShotWithView:self.page2DrawView];
+    }
+    //3.
+    if (self.page3DrawView.drawPathArray) {
+        [LJKeepDrawPath storageDrawPath:self.page3DrawView.drawPathArray onPage:3];
+        image3 = [self screenShotWithView:self.page3DrawView];
+    }
+    
+    CGFloat width = MAX(MAX(image1.size.width, image2.size.width), image3.size.width);
+    
+    UIGraphicsBeginImageContext(CGSizeMake(width, image1.size.height+image2.size.height+image3.size.height));
+    [image1 drawAtPoint:CGPointMake(0, 0)];
+    [image2 drawAtPoint:CGPointMake(0, image1.size.height)];
+    [image3 drawAtPoint:CGPointMake(0, image1.size.height+image2.size.height)];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
 }

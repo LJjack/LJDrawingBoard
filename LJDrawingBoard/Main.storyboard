@@ -54,43 +54,23 @@
                                     <constraint firstAttribute="width" constant="100" id="uqE-Ag-j0N"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fsl-tK-SCl">
-                                <rect key="frame" x="225" y="171" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="AXH-dx-UYC"/>
-                                    <constraint firstAttribute="height" constant="100" id="Nyu-3H-5K6"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DZw-UO-eeR">
-                                <rect key="frame" x="225" y="270" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="1lF-gg-auB"/>
-                                    <constraint firstAttribute="width" constant="100" id="bqm-et-N0I"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ihD-un-BbE" firstAttribute="leading" secondItem="L0q-z5-qjZ" secondAttribute="leading" constant="10" id="Fui-0q-hhZ"/>
-                            <constraint firstItem="DZw-UO-eeR" firstAttribute="top" secondItem="qrL-iu-mBQ" secondAttribute="bottom" constant="206" id="G5d-Hi-6hD"/>
-                            <constraint firstAttribute="centerX" secondItem="DZw-UO-eeR" secondAttribute="centerX" constant="25" id="OhI-B2-juA"/>
-                            <constraint firstAttribute="centerX" secondItem="Fsl-tK-SCl" secondAttribute="centerX" constant="25" id="RGF-GL-Xcb"/>
                             <constraint firstItem="BgO-ef-4sP" firstAttribute="top" secondItem="qrL-iu-mBQ" secondAttribute="bottom" constant="8" id="RKH-pe-3oP"/>
                             <constraint firstItem="ihD-un-BbE" firstAttribute="top" secondItem="qrL-iu-mBQ" secondAttribute="bottom" constant="8" id="S9F-Q6-oTB"/>
                             <constraint firstAttribute="centerX" secondItem="BgO-ef-4sP" secondAttribute="centerX" constant="25" id="eya-E2-tFY"/>
-                            <constraint firstItem="Fsl-tK-SCl" firstAttribute="top" secondItem="qrL-iu-mBQ" secondAttribute="bottom" constant="107" id="m6e-BP-xjc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r8B-up-9Yf"/>
                     <connections>
                         <outlet property="imageView1" destination="BgO-ef-4sP" id="r9e-x3-7Mq"/>
-                        <outlet property="imageView2" destination="Fsl-tK-SCl" id="JhI-JZ-5ud"/>
-                        <outlet property="imageView3" destination="DZw-UO-eeR" id="aOy-H1-XLd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTL-Ed-ZjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71" y="212"/>
+            <point key="canvasLocation" x="-219" y="223"/>
         </scene>
     </scenes>
 </document>

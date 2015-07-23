@@ -116,6 +116,7 @@
         self.pathReleased = YES;
         CGPathRelease(_drawPath);
     }
+    self.drawImageFrame = [self imageWithFrame];
 }
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     
@@ -158,5 +159,14 @@
         self.recoveryDrawPathArray = [NSMutableArray array];
     }
     [self setNeedsDisplay];
+}
+#pragma mark -私有方法
+#pragma mark 确定image的frame
+- (CGRect) imageWithFrame {
+    CGRect frame = [(LJDrawPath *)self.drawPathArray[0] drawPath].bounds;
+    for (LJDrawPath *path in self.drawPathArray) {
+        frame = CGRectUnion(frame, path.drawPath.bounds);
+    }
+    return frame;
 }
 @end
