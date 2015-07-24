@@ -123,11 +123,17 @@
 
 
 - (void)drawToolViewWithKeepImage {
-    if ([_delegate respondsToSelector:
-         @selector(drawViewController:)]) {
-        [self saveImage:[self mergedImage]];
-        [_delegate drawViewController:self];
-        [self drawToolViewWithBack];
+    BOOL isExitDelegate = [_delegate respondsToSelector:
+                           @selector(drawViewController:)];
+    
+    if (isExitDelegate) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [self saveImage:[self mergedImage]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_delegate drawViewController:self];
+                [self drawToolViewWithBack];
+            });
+        });
     }
     
 }
