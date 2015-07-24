@@ -24,21 +24,20 @@
 
 @property (weak, nonatomic) IBOutlet LJDrawToolView *drawToolView;
 @property (weak, nonatomic) IBOutlet LJBgView *bgView;
-@property (strong, nonatomic) NSMutableDictionary *imageDict;
 @end
 
 @implementation LJDrawViewController
-
+#pragma mark 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.imageDict = [NSMutableDictionary dictionary];
-
     [self.drawToolView setDrawToolDelegate:self];
     
-    [self.drawToolView click:self.drawToolView.fristBtn];
     _pageNum = 1;
 }
-
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 #pragma mark - drawToolDelegate
 - (void)drawToolViewWithClearScreen {
     switch (_pageNum) {
@@ -125,8 +124,9 @@
 
 - (void)drawToolViewWithKeepImage {
     if ([_delegate respondsToSelector:
-         @selector(drawViewControllerBackImage:)]) {
-        [_delegate drawViewControllerBackImage:[self mergedImage]];
+         @selector(drawViewController:)]) {
+        [self saveImage:[self mergedImage]];
+        [_delegate drawViewController:self];
         [self drawToolViewWithBack];
     }
     
@@ -171,7 +171,7 @@
         
     }
 }
-#pragma mark - 工具
+#pragma mark - 私有方法
 #pragma mark 截屏
 - (UIImage *) screenShotWithView:(LJDrawView *)drawView {
     
@@ -202,18 +202,20 @@
 - (UIImage *)mergedImage {
     UIImage *image1 =nil,*image2 = nil,*image3 = nil;
     //1.
-    if (self.page1DrawView.drawPathArray) {
-        [LJKeepDrawPath storageDrawPath:self.page1DrawView.drawPathArray onPage:1];
+    if (self.page1DrawView.drawPaths) {
+        //保存绘图路径
+        [LJKeepDrawPath storageDrawPath:self.page1DrawView.drawPaths onPage:1];
+        //截屏
         image1 = [self screenShotWithView:self.page1DrawView];
     }
     //2.
-    if (self.page2DrawView.drawPathArray) {
-        [LJKeepDrawPath storageDrawPath:self.page2DrawView.drawPathArray onPage:2];
+    if (self.page2DrawView.drawPaths) {
+        [LJKeepDrawPath storageDrawPath:self.page2DrawView.drawPaths onPage:2];
         image2 = [self screenShotWithView:self.page2DrawView];
     }
     //3.
-    if (self.page3DrawView.drawPathArray) {
-        [LJKeepDrawPath storageDrawPath:self.page3DrawView.drawPathArray onPage:3];
+    if (self.page3DrawView.drawPaths) {
+        [LJKeepDrawPath storageDrawPath:self.page3DrawView.drawPaths onPage:3];
         image3 = [self screenShotWithView:self.page3DrawView];
     }
     
@@ -227,6 +229,30 @@
     UIGraphicsEndImageContext();
     return image;
 }
+#pragma mark 保存图片
+- (void)saveImage:(UIImage *)image {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachesDirectory = [paths objectAtIndex:0];
+    
+    BOOL isDir = NO;
+    NSString *handWritingDir = [NSString stringWithFormat:@"%@/WISPResources",cachesDirectory];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL existed = [fileManager fileExistsAtPath:handWritingDir isDirectory:&isDir];
+    if ( !(isDir == YES && existed == YES) )
+    {
+        [fileManager createDirectoryAtPath:handWritingDir withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    NSString *imageName = [NSString stringWithFormat:@"hand_writing.png"];
+    
+    NSString *savedImagePath = [handWritingDir stringByAppendingPathComponent:imageName];
+    //also be .jpg or another
+    
+    
+    NSData *imageData = UIImagePNGRepresentation(image);    //UIImageJPEGRepresentation(image)
+    [imageData writeToFile:savedImagePath atomically:YES];
+    NSLog(@"%@",savedImagePath);
+}
 #pragma mark -
 - (BOOL)prefersStatusBarHidden
 {
@@ -234,10 +260,6 @@
 }
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationPortrait;
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

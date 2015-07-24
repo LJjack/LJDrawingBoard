@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -33,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihD-un-BbE">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihD-un-BbE">
                                 <rect key="frame" x="10" y="72" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.77007299270072993" green="0.76317290145985406" blue="0.28872034671532848" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -57,20 +58,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="BgO-ef-4sP" firstAttribute="top" secondItem="L0q-z5-qjZ" secondAttribute="topMargin" constant="72" id="7Dc-Xs-u7B"/>
                             <constraint firstItem="ihD-un-BbE" firstAttribute="leading" secondItem="L0q-z5-qjZ" secondAttribute="leading" constant="10" id="Fui-0q-hhZ"/>
-                            <constraint firstItem="BgO-ef-4sP" firstAttribute="top" secondItem="qrL-iu-mBQ" secondAttribute="bottom" constant="8" id="RKH-pe-3oP"/>
                             <constraint firstItem="ihD-un-BbE" firstAttribute="top" secondItem="qrL-iu-mBQ" secondAttribute="bottom" constant="8" id="S9F-Q6-oTB"/>
                             <constraint firstAttribute="centerX" secondItem="BgO-ef-4sP" secondAttribute="centerX" constant="25" id="eya-E2-tFY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r8B-up-9Yf"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="imageView1" destination="BgO-ef-4sP" id="r9e-x3-7Mq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTL-Ed-ZjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219" y="223"/>
+            <point key="canvasLocation" x="-72" y="201"/>
         </scene>
     </scenes>
 </document>

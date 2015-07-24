@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "LJDrawToolView.h"
+@class LJDrawViewController;
 @protocol LJDrawViewControllerDelegate <NSObject>
 
 @required
-- (void)drawViewControllerBackImage:(UIImage *)image;
+- (void)drawViewController:(LJDrawViewController *)drawViewController;
 @end
 @interface LJDrawViewController : UIViewController<LJDrawToolViewDelegate>
 @property (assign, nonatomic) id<LJDrawViewControllerDelegate> delegate;

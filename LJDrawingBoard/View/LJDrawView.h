@@ -10,7 +10,7 @@
 
 @interface LJDrawView : UIView
 // 绘图路径数组
-@property (strong, nonatomic) NSMutableArray *drawPathArray;
+@property (copy, nonatomic,readonly) NSArray *drawPaths;
 //绘制图片的frame
 @property (assign,nonatomic) CGRect drawImageFrame;
 /*撤销*/

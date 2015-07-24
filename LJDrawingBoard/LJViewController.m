@@ -26,38 +26,23 @@
     [super viewDidLoad];
    
 }
-- (void)drawViewControllerBackImage:(UIImage *)image {
+- (void)drawViewController:(LJDrawViewController *)drawViewController {
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachesDirectory = [paths objectAtIndex:0];
+    
+
+    NSString *handWritingPath = [NSString stringWithFormat:@"%@/WISPResources/hand_writing.png",cachesDirectory];
+    
+    UIImage *image = [UIImage imageWithContentsOfFile:handWritingPath];
     
     CGRect frame = self.imageView1.frame;
     frame.size = image.size;
     self.imageView1.frame = frame;
     
     self.imageView1.image = image;
-    [self saveImage:image];
 }
-- (void)saveImage:(UIImage *)image {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *cachesDirectory = [paths objectAtIndex:0];
-  
-    BOOL isDir = NO;
-    NSString *handWritingDir = [NSString stringWithFormat:@"%@/WISPResources",cachesDirectory];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL existed = [fileManager fileExistsAtPath:handWritingDir isDirectory:&isDir];
-    if ( !(isDir == YES && existed == YES) )
-    {
-        [fileManager createDirectoryAtPath:handWritingDir withIntermediateDirectories:YES attributes:nil error:nil];
-    }
-    
-    NSString *imageName = [NSString stringWithFormat:@"hand_writing.png"];
-    
-    NSString *savedImagePath = [handWritingDir stringByAppendingPathComponent:imageName];
-    //also be .jpg or another
-    
-    
-    NSData *imageData = UIImagePNGRepresentation(image);    //UIImageJPEGRepresentation(image)
-    [imageData writeToFile:savedImagePath atomically:YES];
-    NSLog(@"%@",savedImagePath);
-}
+
 - (IBAction)btn:(UIButton *)sender {
     LJDrawViewController *drawVC = [[LJDrawViewController alloc] init];
     [drawVC setDelegate:self];

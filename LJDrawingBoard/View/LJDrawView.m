@@ -13,7 +13,8 @@
     // 当前的绘图路径
     CGMutablePathRef _drawPath;
 }
-
+// 绘图路径数组
+@property (strong, nonatomic) NSMutableArray *drawPathArray;
 // 恢复绘图路径数组
 @property (strong, nonatomic) NSMutableArray *recoveryDrawPathArray;
 //画笔颜色
@@ -168,5 +169,9 @@
         frame = CGRectUnion(frame, path.drawPath.bounds);
     }
     return frame;
+}
+#pragma mark -get
+- (NSArray *)drawPaths {
+    return self.drawPathArray;
 }
 @end

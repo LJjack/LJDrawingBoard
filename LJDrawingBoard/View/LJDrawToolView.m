@@ -53,9 +53,6 @@
         [button setTitle:_names[i-1] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
-        if (i == 1) {
-            _fristBtn = button;
-        }
         if (i == namesCount-1) {
             _lastBtn = button;
         }

@@ -24,6 +24,4 @@
 @end
 @interface LJDrawToolView : UIScrollView
 @property (nonatomic, assign) id<LJDrawToolViewDelegate> drawToolDelegate;
-@property (nonatomic, weak) LJButton *fristBtn;
-- (void)click:(LJButton *)sender ;
 @end
